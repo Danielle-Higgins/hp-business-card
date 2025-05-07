@@ -2,4 +2,5 @@
 
 <p>
   <img src="https://github.com/Danielle-Higgins/hp-business-card/blob/main/img/hp-front-card-preview.png">
+  <img src="https://github.com/Danielle-Higgins/hp-business-card/blob/main/img/hp-back-card-preview.png">
 </p>
