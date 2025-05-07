@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --body-color: linear-gradient(
+    to bottom right,
+    rgb(130, 130, 130),
+    rgb(196, 196, 196),
+    rgb(130, 130, 130)
+  );
+  --card-color: rgb(24, 46, 56);
+  --other-color: rgb(18, 37, 43);
+  --icon-color: rgb(133, 191, 111);
+  --text-color: rgb(241, 240, 243);
+}
+
+/* Base Styles */
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  background: var(--body-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ----- Business Card Styles ----- */
+.card-container {
+  /* holds all the elements and the size of the card */
+  position: relative;
+  width: 750px;
+  height: 450px;
+  perspective: 1200px;
+}
+
+/* gets rid of the jitter affect */
+.card-container:hover .card {
+  cursor: pointer;
+  transform: rotateY(180deg); /* controls the flip */
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* flips the entire card */
+  transition: 0.6s;
+}
+
+.front-card {
+  position: absolute; /* stack on top of card */
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: var(--card-color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.front-card .logo,
+.back-card .logo {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 2px solid var(--icon-color);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.front-card h1,
+.back-card .left-container h2,
+.back-card .right-container h2 {
+  color: var(--text-color);
+  font-size: 4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.front-card p,
+.back-card .left-container p {
+  color: var(--icon-color);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.back-card {
+  position: absolute; /* stack on top of card */
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: var(--card-color);
+  transform: rotateY(180deg); /* start with the back flipped over */
+  border-radius: 5px;
+  display: flex;
+}
+
+.back-card .left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 10px solid black;
+  padding: 0 20px;
+  background-color: var(--other-color);
+}
+
+.back-card .logo {
+  width: 120px;
+  height: 120px;
+  padding: 15px;
+}
+
+.back-card .left-container h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.back-card .left-container p {
+  font-size: 1.5rem;
+}
+
+.back-card .right-container {
+  padding: 20px;
+}
+
+.back-card .right-container h2 {
+  font-size: 3.5rem;
+}
+
+.back-card .right-container h2 span.first-name {
+  color: var(--icon-color);
+  font-size: 3.5rem;
+  display: inline;
+}
+
+.back-card .right-container span.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.back-card .right-container span {
+  color: var(--text-color);
+  font-size: 1.6rem;
+  display: block;
+}
+
+.back-card .right-container span.portfolio {
+  margin-top: 50px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.back-card .right-container span.linkedin,
+.back-card .right-container span.github {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.back-card .right-container .portfolio i,
+.back-card .right-container .linkedin i,
+.back-card .right-container .github i {
+  font-size: 4rem;
+  color: var(--icon-color);
+  border: 1px solid var(--icon-color);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 690px) {
+  .card {
+    overflow-x: auto;
+  }
+}
