@@ -5,7 +5,7 @@
   <img width="400" src="https://github.com/Danielle-Higgins/hp-business-card/blob/main/img/hp-back-card-preview.png">
 </p>
 
-The name of my brand is called Howling Pixels! If you want to work together and/or what to connect with me, hover the card to see my information on the back. I'm howling for something amazing!
+The name of my brand is called Howling Pixels! If you want to work together and/or what to connect with me, hover over the card to see my information on the back. I'm howling for something amazing!
 
 ## Tech Used
 
